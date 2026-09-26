@@ -60,9 +60,10 @@ function listarUsers(){
 function buscarUser(id: number){
     for(const user of usuarios){
         if(user.id === id){
-            console.log(user)
+            return user
         }
     }
+    return undefined
 }
 
 function listarUserAtivo(){
@@ -90,7 +91,8 @@ const destaivarPorId = (id: number) => {
 }
 
 listarUsers()
-buscarUser(1)
+const userEspecifico = buscarUser(1)
+console.log(userEspecifico?.nome)
 listarUserAtivo()
 calcularMediaIdade()
 destaivarPorId(4)
